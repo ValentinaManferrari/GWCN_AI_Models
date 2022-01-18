@@ -10,5 +10,5 @@ Developing AI models related to health and environment using Python language and
 ### Task description
 Subjects chosen: "Climate Change Evolution" and "Air Pollution and Respiratory Problems". 
 The work on each subject is supposed to take 6 weeks.
-For each of these subjects, I will look for relevant datasets, namely on Kaggle, to build their AI models upon.
-Once a dataset is approved, I will build an AI algorithm using either Python programming language and the Python’s Flask or R’s Shiny platform to translate the subject into a code that can be displayed through an interactive web application on a website built with WordPress.
+For each of these subjects, I will look for relevant datasets, namely on Kaggle, to build AI models upon.
+Once a dataset is approved, I will build an AI algorithm using either Python programming language and the Python’s Flask platform to translate the subject into a code that can be displayed through an interactive web application on a website built with WordPress.
