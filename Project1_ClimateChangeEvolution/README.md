@@ -1,5 +1,7 @@
 # Climate Change Evolution 
 
+![Average land temperature in countries](https://user-images.githubusercontent.com/57778780/156860599-d18889ed-03e3-4554-bda6-86ba73b3bd83.png)
+
 ### Dataset Folder
 Contains the .csv files used for the project. You can find the full database on Kaggle [1]
 
