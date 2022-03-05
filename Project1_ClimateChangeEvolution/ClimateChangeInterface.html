@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>GWCN AI model for Climate Change</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown a:hover {background-color: #ddd;}
+.show {display: block;}
+
+</style>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("select").change(function(){
+        $(this).find("option:selected").each(function(){
+            var optionValue = $(this).attr("value");
+            if(optionValue){
+                $(".box").not("." + optionValue).hide();
+                $("." + optionValue).show();
+            } else{
+                $(".box").hide();
+            }
+        });
+    }).change();
+});
+</script>
+</head>
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+    <h3 class="w3-padding-64"><b>GWCN AI model<br>for Climate Change</b></h3>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a> 
+    <a href="#dataset" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">The Dataset</a> 
+    <a href="#prediction" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">A look into the Future</a> 
+    <a href="#conclusion" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Conclusions</a> 
+    <a href="#source" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Sources</a> 
+    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contact</a>
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+  <span>GWCN AI model for Climate Change</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="dataset">
+    <h1 class="w3-jumbo"><b>Climate Change Evolution</b></h1>
+    <p>Some say climate change is the biggest threat of our age while others say it’s a myth based on dodgy science. 
+      The scope of this research is to visualize average temperatures by country and process them with the help of AI models to make predictions for the future so you can form your own view.</p>
+
+    <h1 class="w3-xxxlarge w3-text-red"><b>The Dataset</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p> All data used for this exercise has been taken from Kaggle database "Climate Change: Earth Surface Temperature Data - Exploring global temperatures since 1750" [1]</p>
+    
+    <p>Let's read the data from the "GlobalTemperatures.csv" file, which has a monthly Earth’s temperature and plot it on the chart.
+      This line graph includes confidence intervals to shows how measurements of temperature have become more accurate in the last decades.
+      Since the 1980 it is obvious that there has been a continuous increase in the overall mean annual temperature.
+    </p>
+    
+    <!-- PLOTLY graph display of world-average-land-temperature -->
+    <div>
+      <a href="https://plotly.com/~manferra/1/?share_key=3vn7rp7psrbhkfyUHGt1QP" target="_blank" title="Average World Land Temperature" style="display: block; text-align: center;"><img src="https://plotly.com/~manferra/1.png?share_key=3vn7rp7psrbhkfyUHGt1QP" alt="Average World Land Temperature" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plotly.com/404.png';" /></a>
+      <script data-plotly="manferra:1" sharekey-plotly="3vn7rp7psrbhkfyUHGt1QP" src="https://plotly.com/embed.js" async></script>
+    </div>
+    <p><em>Feel free to click on the graph to open it in Plotly Visual Studio and have more insights on the represented data.</em></p>
+
+    <p>We can also gain a more detailed view of average temperatures visualizing them by country. The map below shows the average temperatures for 2015.</p>
+    
+    <!-- PLOTLY graph display of world-average-land-temperature by country-->
+    <div>
+      <a href="https://plotly.com/~manferra/105/?share_key=p6ZG7by0tviPMmiJS0XME5" target="_blank" title="Plot 105" style="display: block; text-align: center;"><img src="https://plotly.com/~manferra/105.png?share_key=p6ZG7by0tviPMmiJS0XME5" alt="Plot 105" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plotly.com/404.png';" /></a>
+      <script data-plotly="manferra:105" sharekey-plotly="p6ZG7by0tviPMmiJS0XME5" src="https://plotly.com/embed.js" async></script>
+    </div>
+    <p><em>Feel free to click on the graph to open it in Plotly Visual Studio and have more insights on the represented data.</em></p>
+    
+    
+    <p>To how these evolved during the last two centuries we are going to selet 5 sample countries and plot their respective line graphs.</p>
+
+    <!-- PLOTLY graph display of world-average-land-temperature of selected countries -->
+    <div>
+      <a href="https://plotly.com/~manferra/135/?share_key=Ydlv85nskVKbrFl0n569W0" target="_blank" title="Plot 135" style="display: block; text-align: center;"><img src="https://plotly.com/~manferra/135.png?share_key=Ydlv85nskVKbrFl0n569W0" alt="Plot 135" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plotly.com/404.png';" /></a>
+      <script data-plotly="manferra:135" sharekey-plotly="Ydlv85nskVKbrFl0n569W0" src="https://plotly.com/embed.js" async></script>
+    </div>
+    <p><em>Feel free to click on the graph to open it in Plotly Visual Studio and have more insights on the represented data.</em></p>
+
+  </div>
+  
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+  <!-- Look into the Future -->
+  <div class="w3-container" id="prediction" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>A look into the Future</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+
+    <p> Now we want to use the above shown data to predic how the average land temperature will change in the next 50 years. 
+      For this task Time Series Forcasting has been used, specifically an ARIMA model with parameters (0, 1, 1). the resulting RMSE is 0.183</p>
+
+    <div>
+    <a href="https://plotly.com/~manferra/75/?share_key=o3DHAae6SzD1JP3tXdPodb" target="_blank" title="Plot 75" style="display: block; text-align: center;"><img src="https://plotly.com/~manferra/75.png?share_key=o3DHAae6SzD1JP3tXdPodb" alt="Plot 75" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plotly.com/404.png';" /></a>
+    <script data-plotly="manferra:75" sharekey-plotly="o3DHAae6SzD1JP3tXdPodb" src="https://plotly.com/embed.js" async></script>
+    </div>
+
+    <p>Selet a country in the drop down menu to see what are the forecasted average temperatures there for the next 50 years.
+    </p>
+
+    <div class="dropdown">
+      <select onclick="myFunction()" class="dropbtn w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Select Country
+        <option> Select Country </option>
+        <option value="greenland">Greenland</option>
+        <option value="canada">Canada</option>
+        <option value="italy">Italy</option>
+        <option value="australia">Australia</option>
+        <option value="mali">Mali</option>
+      </select>
+    </div>
+
+    <div class="greenland box">
+      <a href="https://plotly.com/~manferra/115/?share_key=ceOpwMKXYDjuxXcFvcgPgx" target="_blank" title="Plot 115" style="display: block; text-align: center;"><img src="https://plotly.com/~manferra/115.png?share_key=ceOpwMKXYDjuxXcFvcgPgx" alt="Plot 115" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plotly.com/404.png';" /></a>
+      <script data-plotly="manferra:115" sharekey-plotly="ceOpwMKXYDjuxXcFvcgPgx" src="https://plotly.com/embed.js" async></script>
+    </div>
+
+    <div class="canada box">
+      <a href="https://plotly.com/~manferra/121/?share_key=CWDTY5RUg4ivcRFokERLJz" target="_blank" title="Plot 121" style="display: block; text-align: center;"><img src="https://plotly.com/~manferra/121.png?share_key=CWDTY5RUg4ivcRFokERLJz" alt="Plot 121" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plotly.com/404.png';" /></a>
+      <script data-plotly="manferra:121" sharekey-plotly="CWDTY5RUg4ivcRFokERLJz" src="https://plotly.com/embed.js" async></script>
+    </div>
+
+    <div class="italy box">
+      <a href="https://plotly.com/~manferra/139/?share_key=wzTlehbW0zqGi1qA7FtL2Q" target="_blank" title="Plot 139" style="display: block; text-align: center;"><img src="https://plotly.com/~manferra/139.png?share_key=wzTlehbW0zqGi1qA7FtL2Q" alt="Plot 139" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plotly.com/404.png';" /></a>
+      <script data-plotly="manferra:139" sharekey-plotly="wzTlehbW0zqGi1qA7FtL2Q" src="https://plotly.com/embed.js" async></script>
+    </div>
+
+    <div class="australia box">
+      <a href="https://plotly.com/~manferra/147/?share_key=1a1OHoT4EQBnpPA8DRBqW1" target="_blank" title="Plot 147" style="display: block; text-align: center;"><img src="https://plotly.com/~manferra/147.png?share_key=1a1OHoT4EQBnpPA8DRBqW1" alt="Plot 147" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plotly.com/404.png';" /></a>
+      <script data-plotly="manferra:147" sharekey-plotly="1a1OHoT4EQBnpPA8DRBqW1" src="https://plotly.com/embed.js" async></script>
+    </div>
+    
+    <div class="mali box">
+      <a href="https://plotly.com/~manferra/145/?share_key=9Sf9a4oERVNxKAwdWWL4Ur" target="_blank" title="Plot 145" style="display: block; text-align: center;"><img src="https://plotly.com/~manferra/145.png?share_key=9Sf9a4oERVNxKAwdWWL4Ur" alt="Plot 145" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plotly.com/404.png';" /></a>
+      <script data-plotly="manferra:145" sharekey-plotly="9Sf9a4oERVNxKAwdWWL4Ur" src="https://plotly.com/embed.js" async></script>
+    </div>
+
+  </div>
+  
+  <!-- Conclusions -->
+  <div class="w3-container" id="conclusion" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Conclusions.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
+      Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. 
+      Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. 
+      Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. 
+      Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum,
+      elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec 
+      non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, 
+      eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
+    </p>
+    
+  </div>
+
+  <!-- Sources -->
+  <div class="w3-container" id="source" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Sources</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>[1]   Earth, B. (2017, May 1). Climate change: Earth surface temperature data. Kaggle. Retrieved March 2, 2022, from 
+      <a href="https://www.kaggle.com/berkeleyearth/climate-change-earth-surface-temperature-data?select=GlobalLandTemperaturesByCity.csv" target="_blank">https://www.kaggle.com/berkeleyearth/climate-change-earth-surface-temperature-data?select=GlobalLandTemperaturesByCity.csv</a>
+     </p>
+
+    <p>[2]   Brownlee, J. (2017). Introduction to time series forecasting with python: How to prepare data and develop models to predict the future. Jason Brownlee.</p>
+
+    <p>[3]   Sadrach, P. (2021, October 6). A guide to time series forecasting in Python. Built In. Retrieved March 2, 2022, from 
+      <a href="https://builtin.com/data-science/time-series-forecasting-python" target="_blank">https://builtin.com/data-science/time-series-forecasting-python</a> 
+    </p>
+
+    <p>[4]   Peixeiro, M. (2022, February 2). The Complete Guide to Time Series Analysis and forecasting. Medium. Retrieved March 2, 2022, from
+      <a href="https://towardsdatascience.com/the-complete-guide-to-time-series-analysis-and-forecasting-70d476bfe775" target="_blank">https://towardsdatascience.com/the-complete-guide-to-time-series-analysis-and-forecasting-70d476bfe775</a>  </p>
+    
+      <p>[5]   Amelin, V. (2016, November 11). Map of temperatures and analysis of global warming. Kaggle. Retrieved March 2, 2022, from 
+        <a href="https://www.kaggle.com/amelinvladislav/map-of-temperatures-and-analysis-of-global-warming" target="_blank">https://www.kaggle.com/amelinvladislav/map-of-temperatures-and-analysis-of-global-warming</a>  </p>
+  </div>
+
+<!-- End page content -->
+</div>
+
+<!-- W3.CSS Container -->
+<div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right">By Valentina Manferrari</p></div>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+</script>
+
+</body>
+</html>
+
+
