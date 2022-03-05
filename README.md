@@ -8,7 +8,8 @@ Since 3rd November, 2011, ASCOA has been dedicated to improving the awareness of
 Developing AI models related to health and environment using Python language and implementing these models as interactive web applications on a website built with WordPress.
 
 ### Task description
-Subjects chosen: "TBD1" and "TBD2". 
+Project 1: Climate Change Evolution
+Project 2: Air Pollution and Resiratory Problems
 The work on each subject is supposed to take 6 weeks.
 For each of these subjects, I will look for relevant datasets, namely on Kaggle, to build AI models upon.
 Once a dataset is approved, I will build an AI algorithm using either Python programming language and the Python’s Flask platform to translate the subject into a code that can be displayed through an interactive web application on a website built with WordPress.
